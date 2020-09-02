@@ -20,7 +20,7 @@ class Preprocessor:
             if process_type == "T":
                 # Reading the inputs given by the user
                 df = pd.read_csv(filepath)
-                df.to_csv('Training_Files/Good_Raw/df.csv', index=False)
+                df.to_csv('Training_Files/Good_Raw/df_New.csv', index=False)
                 self.logger_object.log(self.file_object, 'Pre-Processing - Successfully read the Re-Training file')
 
                 # Reading the old train data

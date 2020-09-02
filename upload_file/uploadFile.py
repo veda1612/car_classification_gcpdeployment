@@ -23,7 +23,7 @@ class UploadFile:
                 return "No file selected for uploading"
             if file:
                 filename = secure_filename(file.filename)
-                file.save(os.path.join("Input_Files", 'Pred_file.csv'))
+                file.save(os.path.join("Input_Files", 'Uploaded_file.csv'))
                 
                 self.logger_object.log(self.file_object, 'Upload File - File uploaded at the desired location')
                 return "File successfully uploaded at the desired location"

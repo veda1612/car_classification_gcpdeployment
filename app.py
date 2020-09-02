@@ -134,7 +134,7 @@ def predictRouteClient():
 
     if request.method == 'POST':
         try:
-            filepath_val = "Input_Files/pred_file.csv"
+            filepath_val = "Input_Files/Uploaded_file.csv"
             process_type = "P"
             # Pre-Processor Object Initialisation
             pred_prep = Preprocessor(filepath_val,process_type)
@@ -162,7 +162,7 @@ def trainRouteClient():
     if request.method == 'POST':
 
         try:
-            filepath_val = "Input_Files/pred_file.csv"
+            filepath_val = "Input_Files/Uploaded_file.csv"
             process_type = "T"
             # Pre-Processor Object Initialisation
             train_prep = Preprocessor(filepath_val,process_type)

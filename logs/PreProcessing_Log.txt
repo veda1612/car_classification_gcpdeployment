@@ -1,35 +1,10 @@
-2020-09-02/00:13:53		Pre-Processing - Started the pre-processing of the Validated file
-2020-09-02/00:13:53		Pre-Processing - Successfully read the Re-Training file
-2020-09-02/00:13:53		Re-Training - Successfully read the Old Train Data.
-2020-09-02/00:13:53		Pre-Processing - Successfully saved the df_Y file desired location.
-2020-09-02/00:13:53		Pre-Processing - Successfully scaled down the data.
-2020-09-02/00:13:53		Pre-Processing - Successfully saved the pre-processed file at desired location.
-2020-09-02/00:44:55		Pre-Processing - Started the pre-processing of the Validated file
-2020-09-02/00:44:55		Pre-Processing - Successfully read the Prediction file.
-2020-09-02/00:44:55		Pre-Processing - Successfully scaled down the data.
-2020-09-02/00:44:55		Pre-Processing - Successfully saved the pre-processed file at desired location.
-2020-09-02/00:56:34		Pre-Processing - Started the pre-processing of the Validated file
-2020-09-02/00:56:34		Pre-Processing - Successfully read the Prediction file.
-2020-09-02/00:56:34		Pre-Processing - Successfully scaled down the data.
-2020-09-02/00:56:34		Pre-Processing - Successfully saved the pre-processed file at desired location.
-2020-09-02/01:01:00		Pre-Processing - Started the pre-processing of the Validated file
-2020-09-02/01:01:00		Pre-Processing - Successfully read the Re-Training file
-2020-09-02/01:01:00		Re-Training - Successfully read the Old Train Data.
-2020-09-02/01:01:00		Pre-Processing - Successfully saved the df_Y file desired location.
-2020-09-02/01:01:00		Pre-Processing - Successfully scaled down the data.
-2020-09-02/01:01:00		Pre-Processing - Successfully saved the pre-processed file at desired location.
-2020-09-02/01:03:01		Pre-Processing - Started the pre-processing of the Validated file
-2020-09-02/01:03:01		Pre-Processing - Successfully read the Prediction file.
-2020-09-02/01:03:01		Exception occured in data pre-processing. Exception message:  Length mismatch: Expected axis has 1 elements, new values have 6 elements
-2020-09-02/01:12:23		Pre-Processing - Started the pre-processing of the Validated file
-2020-09-02/01:12:23		Exception occured in data pre-processing. Exception message:  [Errno 2] No such file or directory: 'Input_Files/Chosen_file.csv'
-2020-09-02/01:15:01		Pre-Processing - Started the pre-processing of the Validated file
-2020-09-02/01:15:01		Pre-Processing - Successfully read the Prediction file.
-2020-09-02/01:15:01		Pre-Processing - Successfully scaled down the data.
-2020-09-02/01:15:01		Pre-Processing - Successfully saved the pre-processed file at desired location.
-2020-09-02/01:15:13		Pre-Processing - Started the pre-processing of the Validated file
-2020-09-02/01:15:13		Pre-Processing - Successfully read the Re-Training file
-2020-09-02/01:15:13		Re-Training - Successfully read the Old Train Data.
-2020-09-02/01:15:13		Pre-Processing - Successfully saved the df_Y file desired location.
-2020-09-02/01:15:13		Pre-Processing - Successfully scaled down the data.
-2020-09-02/01:15:13		Pre-Processing - Successfully saved the pre-processed file at desired location.
+2020-09-02/10:14:19		Pre-Processing - Started the pre-processing of the Validated file
+2020-09-02/10:14:19		Pre-Processing - Successfully read the Prediction file.
+2020-09-02/10:14:19		Pre-Processing - Successfully scaled down the data.
+2020-09-02/10:14:19		Pre-Processing - Successfully saved the pre-processed file at desired location.
+2020-09-02/10:14:43		Pre-Processing - Started the pre-processing of the Validated file
+2020-09-02/10:14:43		Pre-Processing - Successfully read the Re-Training file
+2020-09-02/10:14:43		Re-Training - Successfully read the Old Train Data.
+2020-09-02/10:14:43		Pre-Processing - Successfully saved the df_Y file desired location.
+2020-09-02/10:14:43		Pre-Processing - Successfully scaled down the data.
+2020-09-02/10:14:43		Pre-Processing - Successfully saved the pre-processed file at desired location.
