@@ -1,0 +1,10 @@
+Price,Maintenance Cost,Number of Doors,Capacity,Size of Luggage Boot,safety,Decision
+vhigh,vhigh,2,2,small,med,accounted
+vhigh,vhigh,2,2,small,high,accounted
+vhigh,vhigh,2,2,med,low,accounted
+vhigh,vhigh,2,2,med,med,accounted
+vhigh,vhigh,2,2,med,high,vgood
+vhigh,vhigh,2,2,big,low,accounted
+vhigh,vhigh,2,2,big,med,vgood
+vhigh,vhigh,2,2,big,high,vgood
+vhigh,vhigh,2,4,small,low,unaccounted

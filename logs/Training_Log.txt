@@ -1,0 +1,18 @@
+2020-09-02/00:13:53		Re-Training - Started the Re-Training of the model
+2020-09-02/00:13:53		Re-Training - Successfully read the pre-processed df_X file received for Training.
+2020-09-02/00:13:53		Re-Training - Successfully read the df_Y file received for Training.
+2020-09-02/00:13:53		Re-Training - Train & Test Split of the preprocessed file done
+2020-09-02/00:13:53		Re-Training - Successfully completed the Model Re-training
+2020-09-02/00:13:53		Re-Training - NewModel file successfully saved
+2020-09-02/01:01:00		Re-Training - Started the Re-Training of the model
+2020-09-02/01:01:00		Re-Training - Successfully read the pre-processed df_X file received for Training.
+2020-09-02/01:01:00		Re-Training - Successfully read the df_Y file received for Training.
+2020-09-02/01:01:00		Re-Training - Train & Test Split of the preprocessed file done
+2020-09-02/01:01:01		Re-Training - Successfully completed the Model Re-training
+2020-09-02/01:01:01		Re-Training - NewModel file successfully saved
+2020-09-02/01:15:13		Re-Training - Started the Re-Training of the model
+2020-09-02/01:15:13		Re-Training - Successfully read the pre-processed df_X file received for Training.
+2020-09-02/01:15:13		Re-Training - Successfully read the df_Y file received for Training.
+2020-09-02/01:15:13		Re-Training - Train & Test Split of the preprocessed file done
+2020-09-02/01:15:14		Re-Training - Successfully completed the Model Re-training
+2020-09-02/01:15:14		Re-Training - NewModel file successfully saved

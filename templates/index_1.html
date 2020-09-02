@@ -1,0 +1,328 @@
+<!-- car evaluation classifier App Using Machine Learning Classifer -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Car Evaluation Classifier App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon"
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">    
+	<style>
+    /* CSS code for button */
+    body {
+      
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: lavender;
+      background-size: cover;
+ }
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 10px;
+    border: 3px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+
+    .button_css:hover {
+    color: #000000 ;
+    background: #6A5ACD;
+    border-color: #FFFFFF ;
+    transition: all 0.4s ease 0s;
+    }
+
+
+   .intro-bg .socials a{
+	color: #ffff;
+	font-size: 1.5em;
+	padding: 4px;
+	transition: all 0.5s linear;
+}
+
+   .intro-bg .socials a:hover {
+	color:  #ffffff;
+	transition: all 0.4s ease 0s;
+}
+
+    .table-wrap {
+    height: 300px;
+    overflow-y: auto;
+}
+
+		.load{
+			height:100%;
+			background-color:#ffffffbe;
+			position:absolute;
+			width:100%;
+			z-index:1000;
+			display:none;
+		}
+		.loader {
+		  border: 10px solid #f3f3f3;
+		  border-radius: 50%;
+		  border-top: 10px solid #3498db;
+		  width: 30px;
+		  height: 30px;
+		  margin-left:auto;
+		  margin-right:auto;
+		  margin-top:30%;
+		  -webkit-animation: spin 2s linear infinite; /* Safari */
+		  animation: spin 2s linear infinite;
+		}
+
+		/* Safari */
+		@-webkit-keyframes spin {
+		  0% { -webkit-transform: rotate(0deg); }
+		  100% { -webkit-transform: rotate(360deg); }
+		}
+
+		@keyframes spin {
+		  0% { transform: rotate(0deg); }
+		  100% { transform: rotate(360deg); }
+		}
+
+		@media (min-width:768px){
+			header.masthead{
+				padding-top:4rem;
+				padding-bottom:4rem;
+			}
+			header.masthead h1{
+				font-size:3rem;
+			}
+		}
+		.res-container{}
+		.result-box{width:80%;margin-left:auto;margin-right:auto;height: 260px;padding:10px;overflow-y: auto;}
+		#loading {
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			z-index: 9999999999;
+			overflow: hidden;
+			background: rgba(255, 255, 255, 0.7);
+		}
+		.loader {
+			border: 8px solid #f3f3f3;
+			border-top: 8px solid #363e75;
+			border-radius: 50%;
+			width: 60px;
+			height: 60px;
+			left: 50%;
+			margin-left: -4em;
+			display: block;
+			animation: spin 2s linear infinite;
+		}
+		.loader,
+		.loader:after {
+			display: block;
+			position: absolute;
+			top: 50%;
+			margin-top: -4.05em;
+		}
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+*,body,input,select {   font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+
+</head>
+
+<body>
+	<!-- Testimonials -->
+	<section class="testimonials text-center">
+		<div class="container-fluid">
+            <h3 class="my-3 title"></h4class><strong>Car Evaluation Classifier App</strong></h3>
+
+            <div class="row">
+				<div class="col-md-5 col-xs-5">
+				   <form method="post" id="datafetch_form" enctype="multipart/form-data">
+                        <br/><center><b></b></center><br/>
+						<div class="custom-file">
+							<input type="file" id="csvFile" class="custom-file-input">
+							<label class="custom-file-label" for="csvFile">Browse the file to upload</label>
+						</div>
+                        <br/><center><b></b></center><br/>
+								<button type="submit" class="btn btn-info col-md-5 col-xs-5 ml-5 mr-5" id="uploadfile">Upload</button>
+                        <div>
+                        <br/><center><b></b></center><br/>
+                        <br/><center><b></b></center><br/>
+                                <button type="submit" class="btn btn-secondary col-md-5 col-xs-5" id="retrainmodel">Retrain Model</button>
+								<button type="submit" class="btn btn-info col-md-5 col-xs-5" id="customfile">Predict</button>
+                        <br/><center><b></b></center><br/>
+                        <br/><center><b></b></center><br/>
+                            <button type="submit" class="btn btn-info col-md-5 col-xs-5" id="download">Download Prediction Results</button>
+				        </div>
+					</form>
+				</div>
+                <div class="col-md-4 col-xs-4">
+                    <br/><center><b></b></center><br/>
+                    <center>
+                    <div class="json-result"></div>
+                        <div class="html-result"></div>
+                    <div class="table-wrap">
+                        <table>
+                          <tbody id="table_content">
+                          </tbody>
+                        </table>
+                    </div>
+                    </center>
+                </div>
+			</div>
+
+		</div>
+
+	</section>
+    </center>
+    <footer>
+      <br/><center><b></b></center><br/>
+      <br/><center><b></b></center><br/>
+      <div class="container text-muted text-left py-3 mt-5">
+          	<nav class="nav navbar-nav navbar-left">
+               <a >iNeuron ML Internship Project by Group 1 I - Veda</a>
+            </nav>
+      </div>
+
+    </footer>
+   	<div id="loading"><div class="loader"></div></div>
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#loading').hide();
+			$("#uploadfile").click(function(e){
+				e.preventDefault();
+				$('#loading').show();
+				var fd = new FormData();
+                var files = $('#csvFile')[0].files[0];
+                fd.append('file',files);
+				$.ajax({
+					//change url below
+					url : "/upload",
+					contentType: false,
+					type: "POST",
+					data: fd,
+					processData: false,
+					success: function(response){
+					    $(".json-result").empty();
+					    $(".html-result").empty();
+						$(".json-result").html('<p></p><pre>' + response + '</pre>');
+						//$('#table_content').hide();
+						$('#loading').hide();
+					}
+				});
+			});
+			$("#customfile").click(function(e){
+				e.preventDefault();
+				$('#loading').show();
+				var path = $("#csvfile").val();
+				$.ajax({
+					//change url below
+					url : "/predict",
+					type: "POST",
+					//dataType: "json",
+					data: {filepath:path},
+					success: function(response){
+
+					    try {
+					        //jQuery.parseJSON(response);
+					        if (response.toLowerCase().indexOf("error") >= 0){
+                                $(".json-result").empty();
+                                $(".json-result").html('<p></p><pre>' + response + '</pre>');
+					        }else{
+                                $(".json-result").empty();
+                                $(".json-result").html('<p></p><pre>' + "Prediction Done! Below is the prediction result for uploaded sample." + '</pre>');
+                                $(".html-result").html(response);
+					        }
+
+                            $('#loading').hide();
+                        }catch(error) {
+                            if (response.toLowerCase().indexOf("error") >= 0){
+                                console.log(response);
+                                $(".json-result").empty();
+                                $(".json-result").html('<p></p><pre>' + response + '</pre>');
+                                $('#loading').hide();
+                            }else{
+                                $(".json-result").html('<p></p><pre>' +"Something weird happen ... "+ '</pre>');
+                                $('#loading').hide();
+                            }
+                            // its not json
+                        }
+					}
+				});
+			});
+			$("#retrainmodel").click(function(e){
+				e.preventDefault();
+				$('#loading').show();
+				var path = $(this).attr("data-path");
+				$.ajax({
+					//change url below
+					url : "/train",
+					type: "POST",
+					data: {filepath:path},
+					success: function(response){
+						$(".json-result").html('<p></p><pre>' + response + '</pre>');
+						$(".table-wrap").html('');
+						$('#loading').hide();
+					}
+				});
+			});
+			$("#download").click(function(e){
+				e.preventDefault();
+				$('#loading').show();
+				//var path = $(this).attr("data-path");
+				$.ajax({
+					//change url below
+					url : "/downloads",
+					type: "GET",
+					xhrFields: {
+                        responseType: 'blob'
+                       },
+					//data: {filepath:path},
+					success: function(response){
+					    var a = document.createElement('a');
+					    var url = '';
+                        url = window.URL.createObjectURL(response);
+                        console.log(url);
+					    a.href = url;
+                        a.download = 'result.csv';
+                        document.body.append(a);
+                        a.click();
+                        a.remove();
+                        window.URL.revokeObjectURL(url);
+						$(".json-result").html('<p></p><pre>' + "File downloaded !!" + '</pre>');
+						$(".table-wrap").empty();
+
+						$('#loading').hide();
+					}
+				});
+			});
+		});
+		// Add the following code if you want the name of the file appear on select
+        $(".custom-file-input").on("change", function() {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+	</script>
+
+
+</body>
+</html>
